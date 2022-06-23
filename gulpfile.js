@@ -1,19 +1,24 @@
 const browserSync = require("browser-sync");
 const gulp = require("gulp");
-const sass = require("sass")(require("sass"));
+const sass = require("gulp-sass")(require("sass"));
 
 function compileSass() {
-  return gulp.src("./sass/styles.scss")
-    .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("./assets/css"))
+  return gulp
+    .src("./sass/styles.scss")
+    .pipe(sass({
+      includePaths: "./node_modules/@uswds"
+    }).on("error", sass.logError))
+    .pipe(gulp.dest("./assets/css"));
 }
 
 function serve() {
   browserSync.init({
     server: {
-      baseDir: "./"
-    }
-  })
+      baseDir: "./",
+    },
+  });
+
+  gulp.watch("./*.html").on("change", browserSync.reload);
 }
 
 exports.serve = serve;
