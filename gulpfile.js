@@ -1,7 +1,20 @@
+const browserSync = require("browser-sync");
 const gulp = require("gulp");
-const uswds = require("@uswds/compile");
+const sass = require("sass")(require("sass"));
 
-uswds.settings.version = 3;
+function compileSass() {
+  return gulp.src("./sass/styles.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest("./assets/css"))
+}
 
-exports.initUSWDS = uswds.init;
-exports.compileSass = uswds.compileSass;
+function serve() {
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
+  })
+}
+
+exports.serve = serve;
+exports.compileSass = compileSass;
