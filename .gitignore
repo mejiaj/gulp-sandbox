@@ -1,3 +1,4 @@
 node_modules/
 .DS_STORE
 *.code-workspace
+assets/css/
