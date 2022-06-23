@@ -2,4 +2,16 @@
 // @forward "uswds";
 // @forward "uswds-theme-custom-styles";
 
-@forward "../node_modules/@uswds/uswds-utilities";
+// @forward "../node_modules/@uswds/uswds-utilities";
+
+@use "../node_modules/@uswds/uswds-core" as *;
+
+body {
+  background-color: color("green-cool-30");
+  font-family: family("serif"); // Sets font appropriately, but never loads
+  color: color("ink");
+}
+
+a {
+  color: color("indigo-60");
+}
