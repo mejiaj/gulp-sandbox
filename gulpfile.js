@@ -8,7 +8,8 @@ function compileSass() {
     .pipe(sass({
       includePaths: "./node_modules/@uswds"
     }).on("error", sass.logError))
-    .pipe(gulp.dest("./assets/css"));
+    .pipe(gulp.dest("./assets/css"))
+    .pipe(browserSync.stream());
 }
 
 function serve() {
@@ -19,6 +20,7 @@ function serve() {
   });
 
   gulp.watch("./*.html").on("change", browserSync.reload);
+  gulp.watch("./sass/styles.scss", compileSass);
 }
 
 exports.serve = serve;
