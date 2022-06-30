@@ -25,3 +25,4 @@ function serve() {
 
 exports.serve = serve;
 exports.compileSass = compileSass;
+exports.default = gulp.series(compileSass, serve);
