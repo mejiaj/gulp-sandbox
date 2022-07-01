@@ -18,3 +18,7 @@
 // ? Absolute path
 // The use of require causes errors like _Uncaught ReferenceError: require is not defined_
 // import * as uswds from "../node_modules/@uswds/uswds-core/src/js/start.js";
+
+// import * as accordion from "../node_modules/@uswds/usa-accordion/src/index.js";
+
+// accordion.on();
