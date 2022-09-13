@@ -20,4 +20,5 @@ function cssInject() {
 
 exports.serve = serve;
 exports.initUSWDS = uswds.init;
+exports.updateUSWDS = uswds.updateUswds;
 exports.compileSass = uswds.compileSass;
