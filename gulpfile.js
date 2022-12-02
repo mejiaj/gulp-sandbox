@@ -19,7 +19,6 @@ function cssInject() {
     .pipe(browserSync.stream())
 }
 
-
 // async function myWatchTask(done) {
 //   const uswdsCompile = await uswds.compileSass
 //   uswdsCompile()
