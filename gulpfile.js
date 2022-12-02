@@ -31,5 +31,6 @@ function cssInject() {
 
 
 // exports.myWatchTask = series(uswds.compileSass, browserSync.reload)
+exports.init = uswds.init
 exports.compile = uswds.compileSass
 exports.default = serve
